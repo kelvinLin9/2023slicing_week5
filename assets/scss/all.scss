@@ -37,5 +37,8 @@
 
 @import "bootstrap/scss/bootstrap";
 @import './base/reset';
+@import './layout/sidebar';
+@import './utils/helpers';
 @import './pages/index.scss';
+@import './pages/admin.scss';
 

@@ -1,4 +1,17 @@
-.hi :hover {
-  color: #198754;
-  border-left: 4px solid #198754;
+.sidebar-hover {
+  cursor: pointer;
+  position: relative;
+  a :hover {
+    color: #198754;
+  }
+  &:hover {
+    color: #198754;
+  }
+  &:hover::before  {
+    content: ""; 
+    position: absolute; 
+    border-left: 5px solid #198754;
+    height: 36px;
+    left: -22px;
+  }
 }
