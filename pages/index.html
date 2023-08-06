@@ -8,6 +8,34 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
     rel="stylesheet">
   </head>
+  <style lang="scss">
+    .modal-backdrop {
+      opacity: 0 !important;  
+    } 
+    .modal-dialog {
+      display: flex;
+      align-items: flex-end;
+      /* margin-left: 200px; */
+      min-height: 754px;
+      min-width: 1296px;
+      .modal.fade & {
+        transition: transform .2s ease-out !important;
+        transform: translate(100px, 100px) !important;
+      }
+      .modal.show & {
+        transform: none !important;
+      }
+    }
+    .modal-content {
+      margin-left: auto !important; 
+      width: 636px !important;
+    }
+    textarea  {
+      height: 245px;
+    }
+
+
+  </style>
   <body>
     <div class="container">
       <div class="row">
@@ -21,18 +49,18 @@
               <h1 class="fs-4 fw-bold me-4">
                 Assignment
               </h1>
-              <p class="fw-bold me-2">
+              <p class="fw-bold me-2 cursor-pointer">
                 All Courses
               </p>
-              <span class="material-icons text-primary">
+              <span class="material-icons text-primary cursor-pointer">
                 expand_more
               </span>
             </div>
             <div class="col-auto d-flex align-items-center ms-auto">
-              <span class="material-icons">
+              <span class="material-icons cursor-pointer">
                 search
               </span>              
-              <span class="material-icons ms-3">
+              <span class="material-icons ms-3 cursor-pointer">
                 notifications_active
               </span>
             </div>
@@ -40,8 +68,8 @@
           <!-- 展開按鈕 -->
           <div class="row mb-1 align-items-center">
             <div class="col-auto d-flex align-items-center">
-              <p class="fw-bold me-1">All (4)</p>
-              <span class="material-icons text-primary">
+              <p class="fw-bold me-1 cursor-pointer">All (4)</p>
+              <span class="material-icons text-primary cursor-pointer">
                 expand_more
               </span>
             </div>
@@ -176,17 +204,13 @@
                   </div>
                 </a>
 
-
-                <!-- Modal -->
-
-
                 <!-- 下方按鈕 -->
                 <div class="d-flex justify-content-between mt-4">
                   <div>
-                    <span class="material-icons me-3">
+                    <span class="material-icons me-3 cursor-pointer">
                       chevron_left
                     </span>
-                    <span class="material-icons me-3">
+                    <span class="material-icons me-3 cursor-pointer">
                       chevron_right
                     </span>
                   </div>
@@ -201,66 +225,12 @@
                   </div>
                 </div>
               </div>
-
-<!-- Button trigger modal -->
-<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Launch demo modal
-</button> -->
-
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header d-flex align-items-center">
-        <span class="fw-bold">Body Text</span>
-        <span class="material-icons">
-          arrow_drop_down
-        </span>
-        <span class="material-icons">
-          format_bold
-        </span>
-        <span class="material-icons">
-          format_italic
-        </span>
-        <span class="material-icons">
-          format_list_bulleted
-        </span>
-        <span class="material-icons">
-          format_list_numbered
-        </span>
-        <span class="material-icons">
-          insert_photo
-        </span>
-        <span class="material-icons">
-          insert_link
-        </span>
-        <span class="material-icons">
-          unfold_more
-        </span>
-      </div>
-      <div class="modal-body">
-        <div>
-          <label for="exampleFormControlTextarea1" class="form-label"></label>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-
             </div>
           </div>
         </div>
       </div>
     </div>
+    <%- include('./component/replyModal'); -%>
 
 
     

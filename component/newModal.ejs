@@ -1,0 +1,100 @@
+<div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog ">
+    <div class="modal-content">
+      <div class="modal-body m-3">
+        <form>
+      <div class="d-flex justify-content-between">
+        <h2 class="fs-5 fw-bold mb-3">New Admin</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <!-- Account -->
+      <div class="pb-3 border-bottom">
+        <h3 class="fs-5 fw-bold mb-2">Account</h3>
+        <div class="mb-3">
+          <label for="nameNew" class="col-form-label">Name</label>
+          <input type="text" class="form-control py-3" id="nameNew">
+        </div>
+
+        <div class="mb-3">
+          <label for="emailNew" class="col-form-label">Email</label>
+          <input type="text" class="form-control py-3" id="emailNew">
+        </div>
+      </div>
+      <!-- Verification -->
+      <div class="py-3 border-bottom">
+        <h3 class="fs-5 fw-bold mb-2">Verification</h3>
+        <div class="mb-3">
+          <div class="d-flex justify-content-between mb-3">
+            <div class="d-flex">
+              <span class="material-icons text-danger me-1">
+                warning
+              </span>
+              <p class="fw-bold">Unverified</p>
+            </div>
+          </div>
+          <div class="">
+            <button type="button" class="btn btn-outline-primary border-g400 w-100 py-3">
+              Send Verification Mail
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Access Level -->
+      <div class="py-3 border-bottom">
+        <h3 class="fs-5 fw-bold mb-2">Access Level</h3>
+        <div class="mb-3">
+          <select class="form-select form-select-lg mb-3" aria-label="Large select example">
+            <option selected class="text-secondary">-Choose access level-</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Custom Access -->
+      <div class="pt-3">
+        <h3 class="fs-5 fw-bold mb-2">Custom Access</h3>
+        <div class="mb-3">
+          <div class="form-check mb-2">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckNew1">
+            <label class="form-check-label" for="flexCheckNew1">
+              Lecture
+            </label>
+          </div>
+          <div class="form-check mb-2">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckNew2">
+            <label class="form-check-label" for="flexCheckNew2">
+              Coupon
+            </label>
+          </div>
+          <div class="form-check mb-2">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckNew3">
+            <label class="form-check-label" for="flexCheckNew3">
+              Message
+            </label>
+          </div>
+          <div class="form-check mb-2">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckNew4">
+            <label class="form-check-label" for="flexCheckNew4">
+              Setting
+            </label>
+          </div>
+          <div class="form-check mb-2">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckNew5">
+            <label class="form-check-label" for="flexCheckNew5">
+              Task Menu
+            </label>
+          </div>
+        </div>
+      </div>
+        </form>
+        <div class="mt-5 d-flex">
+      <button type="button" class="btn btn-outline-primary px-4 me-3 ms-auto" data-bs-dismiss="modal">Cancel</button>
+      <button type="button" class="btn btn-primary px-4">Update</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
