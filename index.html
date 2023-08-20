@@ -7,8 +7,8 @@
     <title>week5</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
     rel="stylesheet">
-    <script type="module" crossorigin src="/2023slicing_week5/assets/main-c9dd8f54.js"></script>
-    <link rel="stylesheet" href="/2023slicing_week5/assets/main-45764443.css">
+    <script type="module" crossorigin src="/2023slicing_week5/assets/main-b95798f0.js"></script>
+    <link rel="stylesheet" href="/2023slicing_week5/assets/main-653479ea.css">
   </head>
   <style lang="scss">
     .modal-backdrop {
@@ -17,7 +17,7 @@
     .modal-dialog {
       display: flex;
       align-items: flex-end;
-      min-height: 754px;
+      min-height: 774px;
       min-width: 1297px;
       .modal.fade & {
         transition: transform .2s ease-out !important;
@@ -36,16 +36,33 @@
     }
     .assignment {
       color: #198754;
+      &::before  {
+      content: ""; 
+      position: absolute; 
+      border-left: 5px solid #198754;
+      height: 30px;
+      left: -22px;
+  }
+    }
+    .list-group-item-action {
+      &:hover,
+      &:focus {
+        color: #000 !important;
+        background-color: #F8F9FA;
+      }
+      &.active {
+        color: #000 !important;
+        background-color: #F8F9FA !important;
+        border-color: #CED4DA !important;
+      }
     }
   </style>
   <body>
-    <div class="container">
-      <div class="row">
-        <!-- 左邊選單 -->
-        <div class="col-3 bg-body-tertiary d-flex flex-column py-4 ps-4">
-  <div class="logo mb-4">
+    <!-- 左邊選單 -->
+    <nav class="sidebar bg-body-tertiary d-flex flex-column py-4 ps-4">
+  <a href="index.html" class="logo mb-4">
     <img src="/2023slicing_week5/assets/logo-ANSWER-5336fb45.svg" alt="logo" class="my-8 ms-8">
-  </div>
+  </a>
   <ul class="list-unstyled">
     <li class="d-flex align-items-center mb-3 sidebar-hover">
       <span class="material-icons">
@@ -97,22 +114,30 @@
       <p class="fs-7 text-secondary">andy0401@mail.com</p>
     </div>
   </div>
-
-
-</div>        <!-- 右邊內容 -->
-        <div class="col-9 py-4">
+</nav>    <div class="container">
+      <div class="row">
+        <!-- 右邊內容 -->
+        <div class="col py-4">
           <!-- header -->
           <div class="row mb-4">
             <div class="col d-flex align-items-center">
               <h1 class="fs-4 fw-bold me-4">
                 Assignment
               </h1>
-              <p class="fw-bold me-2 cursor-pointer">
-                All Courses
-              </p>
-              <span class="material-icons text-primary cursor-pointer">
-                expand_more
-              </span>
+              <div class="d-flex align-items-center"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                <p class="fw-bold me-2 cursor-pointer">
+                  All Courses
+                </p>
+                <span class="material-icons text-primary cursor-pointer">
+                  expand_more
+                </span>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Action two</a></li>
+                  <li><a class="dropdown-item" href="#">Action three</a></li>
+                </ul>
+              </div>
             </div>
             <div class="col-auto d-flex align-items-center ms-auto">
               <span class="material-icons cursor-pointer">
@@ -125,11 +150,19 @@
           </div>
           <!-- 展開按鈕 -->
           <div class="row mb-1 align-items-center">
-            <div class="col-auto d-flex align-items-center">
-              <p class="fw-bold me-1 cursor-pointer">All (4)</p>
+            <div class="col-auto d-flex align-items-center"
+                data-bs-toggle="dropdown" aria-expanded="false">
+              <p class="fw-bold me-1 cursor-pointer">
+                All (4)
+              </p>              
               <span class="material-icons text-primary cursor-pointer">
                 expand_more
               </span>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
             </div>
             <div class="col-auto ms-auto">
               <p class="fs-7 text-secondary">2 comments</p>
@@ -139,8 +172,8 @@
           <div class="row">
             <!-- 左邊列表 -->
             <div class="col-4">
-              <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action" aria-current="true">
+              <div class="list-group" id="list-tab" role="tablist">
+                <a class="list-group-item list-group-item-action active" id="list-home-list" data-bs-toggle="list" href="#list-Emily" role="tab" aria-controls="list-home">
                   <div class="d-flex w-100 justify-content-between">
                     <small class="mb-1 fs-7 text-secondary">Chapter Assignment 2</small>
                     <small class="fs-7 text-secondary">4 hrs ago</small>
@@ -150,7 +183,7 @@
                     <small class="fs-7 text-secondary">Emily Wang</small>
                   </div>
                 </a>
-                <a href="#" class="list-group-item list-group-item-action" aria-current="true">
+                <a class="list-group-item list-group-item-action" id="list-home-list" data-bs-toggle="list" href="#list-David" role="tab" aria-controls="list-home">
                   <div class="d-flex w-100 justify-content-between">
                     <small class="mb-1 fs-7 text-secondary">Chapter Assignment 2</small>
                     <small class="fs-7 text-secondary">12 hrs ago</small>
@@ -159,7 +192,8 @@
                     <p class="mb-1 fw-bold">My Homework</p>
                     <small class="fs-7 text-secondary">David Xu</small>
                   </div>
-                </a>                <a href="#" class="list-group-item list-group-item-action" aria-current="true">
+                </a>                
+                <a class="list-group-item list-group-item-action" id="list-home-list" data-bs-toggle="list" href="#list-Tony" role="tab" aria-controls="list-home">
                   <div class="d-flex w-100 justify-content-between">
                     <small class="mb-1 fs-7 text-secondary">Final Assignment</small>
                     <small class="fs-7 text-secondary">18 hrs ago</small>
@@ -168,7 +202,8 @@
                     <p class="mb-1 fw-bold">Have a problem with this…</p>
                     <small class="fs-7 text-secondary">Tony Wei</small>
                   </div>
-                </a>                <a href="#" class="list-group-item list-group-item-action" aria-current="true">
+                </a>                
+                <a class="list-group-item list-group-item-action" id="list-home-list" data-bs-toggle="list" href="#list-Christina" role="tab" aria-controls="list-home">
                   <div class="d-flex w-100 justify-content-between">
                     <small class="mb-1 fs-7 text-secondary">Final Assignment</small>
                     <small class="fs-7 text-secondary">19 days ago</small>
@@ -182,105 +217,249 @@
             </div>
             <!-- 右邊內容 -->
             <div class="col-8">
-              <div class="list-group">
-                <!-- 標題 -->
-                <a href="#" class="list-group-item list-group-item-action bg-body-tertiary" aria-current="true">
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div>
-                      <p class="fs-7 mb-1">Chapter Assignment 2 / HTML&CSS</p>
-                      <p class="fw-bold">Please check this file for me, thanks!</p>
-                    </div>
-                    <span class="material-icons">
-                      more_vert
-                    </span>
-                  </div>
-                </a>
-                <!-- 第一塊 -->
-                <a href="#" class="list-group-item list-group-item-action border-bottom-0" aria-current="true">
-                  <!-- 頭貼名字 -->
-                  <div class="d-flex align-items-start mb-2">
-                    <div class="user-photo flex-shrink-0">
-                      <img src="/2023slicing_week5/assets/emilywang-cc5a821b.jpeg" alt="emilywang" class="rounded-circle h-100 w-100">
-                    </div>
-                    <div class="flex-grow-1 ms-2">
-                      <div class="fw-bold">
-                        Emily Wang
+              <div class="tab-content border" id="nav-tabContent">
+                <!-- Emily -->
+                <div class="tab-pane fade show active" id="list-Emily" role="tabpanel" aria-labelledby="list-home-list">
+                  <!-- 標題 -->
+                  <div href="#" class="bg-body-tertiary px-3 py-2 border">
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div>
+                        <p class="fs-7 mb-1">Chapter Assignment 2 / HTML&CSS</p>
+                        <p class="fw-bold">Please check this file for me, thanks!</p>
                       </div>
-                      <div class="fs-7 text-secondary">
-                        10:38 AM (4 hours ago)
-                      </div>
-    
-                      
+                      <a href="#" class="material-icons">
+                        more_vert
+                      </a>
                     </div>
                   </div>
-                  
-                  <div class="border-bottom ms-5 me-3 pb-2">
-                    <!-- 內文 -->
-                    <div class="mb-2">
-                      <p>Hi Teacher, the attached file is my homework of chapter 2. And here comes a question: Why in the following code the height of the <span class="text-primary bg-body-tertiary">div</span> is bigger than the height of the <span class="text-primary bg-body-tertiary">img</span> ? There is a gap below the image, but it doesn’t seems to be a padding/margin. What is the gap or extra space below image?</p>
-                    </div>
-                    <!-- 按鈕 -->
-                    <button type="button" class="btn bg-body-tertiary border-secondary mb-2 d-flex">
-                      <span class="material-icons">
-                        attach_file
-                      </span>
-                      <span class="fw-bold ms-1">
-                        HW-2-David.zip
-                      </span>
-                    </button>
-                  </div>
-                </a>
-                <!-- 第二塊 -->
-                <a href="#" class="list-group-item list-group-item-action border-top-0" aria-current="true">
-                  <!-- 頭貼名字 -->
-                  <div class="d-flex align-items-start mb-2">
-                    <div class="user-photo flex-shrink-0">
-                      <img src="/2023slicing_week5/assets/andychen-f14fef59.jpeg" alt="andychen" class="rounded-circle h-100 w-100">
-                    </div>
-                    <div class="flex-grow-1 ms-2">
-                      <div class="fw-bold">
-                        Andy Chen (You)
+                  <!-- 第一塊 -->
+                  <div class="list-group-item list-group-item-action border-bottom-0 p-3" aria-current="true">
+                    <!-- 頭貼名字 -->
+                    <div class="d-flex align-items-start mb-2">
+                      <div class="user-photo flex-shrink-0">
+                        <img src="/2023slicing_week5/assets/emilywang-cc5a821b.jpeg" alt="emilywang" class="rounded-circle h-100 w-100">
                       </div>
-                      <div class="fs-7 text-secondary">
-                        13:24 AM (1 hours ago)
+                      <div class="flex-grow-1 ms-2">
+                        <div class="fw-bold">
+                          Emily Wang
+                        </div>
+                        <div class="fs-7 text-secondary">
+                          10:38 AM (4 hours ago)
+                        </div>
                       </div>
                     </div>
-                    <div class="flex-shrink-0">
-                      <span class="material-icons me-2">
-                        star_outline
-                      </span>
-                      <span class="material-icons me-3">
-                        create
-                      </span>
+                    
+                    <div class="border-bottom ms-5 me-3 pb-2">
+                      <!-- 內文 -->
+                      <div class="mb-2">
+                        <p class="fs-14">Hi Teacher, the attached file is my homework of chapter 2. And here comes a question: Why in the following code the height of the <span class="text-primary bg-body-tertiary Roboto-Mono fs-14">div</span> is bigger than the height of the <span class="text-primary bg-body-tertiary Roboto-Mono fs-14">img</span> ? There is a gap below the image, but it doesn’t seems to be a padding/margin. What is the gap or extra space below image?</p>
+                      </div>
+                      <!-- 按鈕 -->
+                      <button type="button" class="btn bg-body-tertiary border-secondary mb-2 d-flex">
+                        <span class="material-icons">
+                          attach_file
+                        </span>
+                        <span class="fw-bold ms-1">
+                          HW-2-Emily.zip
+                        </span>
+                      </button>
                     </div>
                   </div>
-                  <div class="ms-5 me-3 pb-2">
-                    <!-- 內文 -->
-                    <div class="mb-2">
-                      <p>Hi David, by default, an image is rendered inline, like a letter so it sits on the same line that a, b, c and d sit on. There is space below that line for the descenders you find on letters like g, j, p and q. <br><br>You can: <br><br>• adjust the <span class="text-primary bg-body-tertiary">vertical-align</span> of the image to position it elsewhere (e.g. the <span class="text-primary bg-body-tertiary">middle</span> ) or 　<br>• change the <span class="text-primary bg-body-tertiary">display</span> so it isn’t inline.</p>
+                  <!-- 第二塊 -->
+                  <div class="list-group-item list-group-item-action border-top-0 p-3" aria-current="true">
+                    <!-- 頭貼名字 -->
+                    <div class="d-flex align-items-start mb-2">
+                      <div class="user-photo flex-shrink-0">
+                        <img src="/2023slicing_week5/assets/andychen-f14fef59.jpeg" alt="andychen" class="rounded-circle h-100 w-100">
+                      </div>
+                      <div class="flex-grow-1 ms-2">
+                        <div class="fw-bold">
+                          Andy Chen (You)
+                        </div>
+                        <div class="fs-7 text-secondary">
+                          13:24 AM (1 hours ago)
+                        </div>
+                      </div>
+                      <div class="flex-shrink-0">
+                        <a href="#" class="material-icons me-2">
+                          star_outline
+                        </a>
+                        <a href="#" class="material-icons me-3">
+                          create
+                        </a>
+                      </div>
+                    </div>
+                    <div class="ms-5 me-3 pb-2">
+                      <!-- 內文 -->
+                      <div class="mb-2">
+                        <p class="fs-14">Hi Emily, by default, an image is rendered inline, like a letter so it sits on the same line that a, b, c and d sit on. There is space below that line for the descenders you find on letters like g, j, p and q. <br><br>You can: <br><br>• adjust the <span class="text-primary bg-body-tertiary Roboto-Mono fs-14">vertical-align</span> of the image to position it elsewhere (e.g. the <span class="text-primary bg-body-tertiary Roboto-Mono fs-14">middle</span> ) or 　<br>• change the <span class="text-primary bg-body-tertiary Roboto-Mono fs-14">display</span> so it isn’t inline.</p>
+                      </div>
                     </div>
                   </div>
-                </a>
-
-                <!-- 下方按鈕 -->
-                <div class="d-flex justify-content-between mt-4">
-                  <div>
-                    <span class="material-icons me-3 cursor-pointer">
-                      chevron_left
-                    </span>
-                    <span class="material-icons me-3 cursor-pointer">
-                      chevron_right
-                    </span>
+                </div>
+                <!-- David -->
+                <div class="tab-pane fade" id="list-David" role="tabpanel" aria-labelledby="list-home-list">
+                  <!-- 標題 -->
+                  <div href="#" class="bg-body-tertiary px-3 py-2 border">
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div>
+                        <p class="fs-7 mb-1">Chapter Assignment 2 / HTML&CSS</p>
+                        <p class="fw-bold">Please check this file for me, thanks!</p>
+                      </div>
+                      <a href="#" class="material-icons">
+                        more_vert
+                      </a>
+                    </div>
                   </div>
-                  <div class="">
-                    <button type="button" class="btn btn-outline-primary px-4 me-2">
-                      Mark as read
-                    </button>
-                    <button type="button" class="btn btn-primary px-4"
-                    data-bs-toggle="modal" data-bs-target="#exampleModal">
-                      Reply
-                    </button>
+                  <!-- 第一塊 -->
+                  <div class="list-group-item list-group-item-action border-bottom-0 p-3" aria-current="true">
+                    <!-- 頭貼名字 -->
+                    <div class="d-flex align-items-start mb-2">
+                      <div class="user-photo flex-shrink-0">
+                        <img src="/2023slicing_week5/assets/David-3ebce262.png" alt="David" class="rounded-circle h-100 w-100">
+                      </div>
+                      <div class="flex-grow-1 ms-2">
+                        <div class="fw-bold">
+                          David Xu
+                        </div>
+                        <div class="fs-7 text-secondary">
+                          10:38 PM (12 hours ago)
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="border-bottom ms-5 me-3 pb-2">
+                      <!-- 內文 -->
+                      <div class="mb-2">
+                        <p class="fs-14">老師尼好，窩喜歡說中穩，附件是我第二章的作業。這裡有一個問題：為什麼下面的代碼中 div 的高度比 img 的高度大？ 圖像下方有一個間隙，但它似乎不是填充/邊距。 圖片下方的間隙或多餘空間是什麼？</p>
+                      </div>
+                      <!-- 按鈕 -->
+                      <button type="button" class="btn bg-body-tertiary border-secondary mb-2 d-flex">
+                        <span class="material-icons">
+                          attach_file
+                        </span>
+                        <span class="fw-bold ms-1">
+                          HW-2-David.zip
+                        </span>
+                      </button>
+                    </div>
                   </div>
+                </div>
+                <!-- Tony -->
+                <div class="tab-pane fade" id="list-Tony" role="tabpanel" aria-labelledby="list-home-list">
+                  <!-- 標題 -->
+                  <div href="#" class="bg-body-tertiary px-3 py-2 border">
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div>
+                        <p class="fs-7 mb-1">Chapter Assignment 2 / HTML&CSS</p>
+                        <p class="fw-bold">Please check this file for me, thanks!</p>
+                      </div>
+                      <a href="#" class="material-icons">
+                        more_vert
+                      </a>
+                    </div>
+                  </div>
+                  <!-- 第一塊 -->
+                  <div class="list-group-item list-group-item-action border-bottom-0 p-3" aria-current="true">
+                    <!-- 頭貼名字 -->
+                    <div class="d-flex align-items-start mb-2">
+                      <div class="user-photo flex-shrink-0">
+                        <img src="/2023slicing_week5/assets/Tony-b9c75b3c.png" alt="Tony" class="rounded-circle h-100 w-100">
+                      </div>
+                      <div class="flex-grow-1 ms-2">
+                        <div class="fw-bold">
+                          Tony Wei
+                        </div>
+                        <div class="fs-7 text-secondary">
+                          4:38 PM (18 hours ago)
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="border-bottom ms-5 me-3 pb-2">
+                      <!-- 內文 -->
+                      <div class="mb-2">
+                        <p class="fs-14">老師尼好，窩也很喜歡說中穩，附件是我第5487章的作業。這裡有一個問題：為什麼下面的代碼中 div 的高度比 img 的高度大？ 圖像下方有一個間隙，但它似乎不是填充/邊距。 圖片下方的間隙或多餘空間是什麼？</p>
+                      </div>
+                      <!-- 按鈕 -->
+                      <button type="button" class="btn bg-body-tertiary border-secondary mb-2 d-flex">
+                        <span class="material-icons">
+                          attach_file
+                        </span>
+                        <span class="fw-bold ms-1">
+                          HW-5487-Tony.zip
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <!-- Christina -->
+                <div class="tab-pane fade" id="list-Christina" role="tabpanel" aria-labelledby="list-home-list">
+                  <!-- 標題 -->
+                  <div href="#" class="bg-body-tertiary px-3 py-2 border">
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div>
+                        <p class="fs-7 mb-1">Chapter Assignment 2 / HTML&CSS</p>
+                        <p class="fw-bold">Please check this file for me, thanks!</p>
+                      </div>
+                      <a href="#" class="material-icons">
+                        more_vert
+                      </a>
+                    </div>
+                  </div>
+                  <!-- 第一塊 -->
+                  <div class="list-group-item list-group-item-action border-bottom-0 p-3" aria-current="true">
+                    <!-- 頭貼名字 -->
+                    <div class="d-flex align-items-start mb-2">
+                      <div class="user-photo flex-shrink-0">
+                        <img src="/2023slicing_week5/assets/Christina-e7162cc7.png" alt="Christina" class="rounded-circle h-100 w-100">
+                      </div>
+                      <div class="flex-grow-1 ms-2">
+                        <div class="fw-bold">
+                          Christina Lin
+                        </div>
+                        <div class="fs-7 text-secondary">
+                          05:38 AM (19 days ago)
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="border-bottom ms-5 me-3 pb-2">
+                      <!-- 內文 -->
+                      <div class="mb-2">
+                        <p class="fs-14">こんにちは、先生、添付ファイルは第 𝝅 章の宿題です。そして、ここで質問が来ます。次のコードでは、div の高さが img の高さよりも大きいのはなぜですか? 画像の下に隙間がありますが、パディング/マージンではないようです。 画像の下の隙間または余分なスペースは何ですか?</p>
+                      </div>
+                      <!-- 按鈕 -->
+                      <button type="button" class="btn bg-body-tertiary border-secondary mb-2 d-flex">
+                        <span class="material-icons">
+                          attach_file
+                        </span>
+                        <span class="fw-bold ms-1">
+                          HW-3-1415926-Christina.zip
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- 下方按鈕 -->
+              <div class="d-flex justify-content-between mt-4">
+                <div>
+                  <span class="material-icons me-3 cursor-pointer">
+                    chevron_left
+                  </span>
+                  <span class="material-icons me-3 cursor-pointer">
+                    chevron_right
+                  </span>
+                </div>
+                <div class="">
+                  <button type="button" class="btn btn-outline-primary px-4 me-2">
+                    Mark as read
+                  </button>
+                  <button type="button" class="btn btn-primary px-4"
+                  data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Reply
+                  </button>
                 </div>
               </div>
             </div>
@@ -288,6 +467,7 @@
         </div>
       </div>
     </div>
+
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -335,9 +515,26 @@
       </div> -->
     </div>
   </div>
-</div>
+</div>    <!-- <div id="editor" class="editor">This is some sample content.</div>
 
-    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor5/39.0.1/ckeditor.min.js"></script> -->
+
+
+
+<!-- <script>
+
+  // import ClassicEditor from './ckeditor';
+
+// ClassicEditor
+//     // Note that you do not have to specify the plugin and toolbar configuration — using defaults from the build.
+//     .create( document.querySelector( '#app' ) )
+//     .then( editor => {
+//         console.log( 'Editor was initialized', editor );
+//     } )
+//     .catch( error => {
+//         console.error( error.stack );
+//     } );
+</script> -->    
     
   </body>
 </html>
