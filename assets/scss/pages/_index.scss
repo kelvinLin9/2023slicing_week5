@@ -1,6 +1,9 @@
 .user-photo {
   width: 40px;
   height: 40px;
+  img {
+    object-fit: cover;
+  }
 }
 .reply-textarea {
   resize: none;
@@ -8,9 +11,9 @@
 .rotate-90 {
   transform: rotate(90deg)
 }
-a:hover {
-  color: #198754 !important;
-}
+// a:hover {
+//   color: #198754 !important;
+// }
 
 
 

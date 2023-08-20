@@ -1,5 +1,5 @@
 <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog ">
+  <div class="modal-dialog modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-body m-3">
         <form>
@@ -12,12 +12,12 @@
         <h3 class="fs-5 fw-bold mb-2">Account</h3>
         <div class="mb-3">
           <label for="name" class="col-form-label">Name</label>
-          <input type="text" class="form-control bg-body-tertiary border-0 py-3" id="name" placeholder="Emir Wicks">
+          <input type="text" class="form-control bg-body-tertiary border-0 py-3" id="name" placeholder="Emir Wicks" readonly>
         </div>
 
         <div class="mb-3">
           <label for="email" class="col-form-label">Email</label>
-          <input type="text" class="form-control bg-body-tertiary border-0 py-3" id="email" placeholder="emir.wicks@mail.com">
+          <input type="text" class="form-control bg-body-tertiary border-0 py-3" id="email" placeholder="emir.wicks@mail.com" readonly>
         </div>
       </div>
       <!-- Verification -->
@@ -33,11 +33,9 @@
             </div>
             <p>2020/4/12</p>
           </div>
-          <div class="">
-            <button type="button" class="btn btn-outline-secondary w-100 py-3">
-              Send Verification Mail
-            </button>
-          </div>
+          <button type="button" class="btn btn-outline-secondary w-100 py-3">
+            Send Verification Mail
+          </button>
         </div>
       </div>
 
@@ -103,17 +101,15 @@
               <p class="fw-bold text-danger">This cannot be undone!</p>
             </div>
           </div>
-          <div class="">
-            <button type="button" class="btn btn-outline-danger w-100 py-3">
-              Send Verification Mail
-            </button>
-          </div>
+          <button type="button" class="btn btn-outline-danger w-100 py-3">
+            Send Verification Mail
+          </button>
         </div>
       </div>
         </form>
         <div class="mt-5 d-flex">
-      <button type="button" class="btn btn-outline-primary px-4 me-3 ms-auto" data-bs-dismiss="modal">Cancel</button>
-      <button type="button" class="btn btn-primary px-4">Update</button>
+          <button type="button" class="btn btn-outline-primary px-4 me-3 ms-auto" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary px-4">Update</button>
         </div>
       </div>
     </div>

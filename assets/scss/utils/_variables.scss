@@ -649,7 +649,8 @@ $font-sizes: (
   4: $h4-font-size,
   5: $h5-font-size,
   6: $h6-font-size,
-  7: $h7-font-size
+  7: $h7-font-size,
+  14: 14px,
 ) !default;
 // scss-docs-end font-sizes
 
@@ -1305,16 +1306,16 @@ $pagination-bg:                     var(--#{$prefix}body-bg) !default;
 $pagination-border-radius:          var(--#{$prefix}border-radius) !default;
 $pagination-border-width:           var(--#{$prefix}border-width) !default;
 $pagination-margin-start:           calc(#{$pagination-border-width} * -1) !default; // stylelint-disable-line function-disallowed-list
-$pagination-border-color:           var(--#{$prefix}border-color) !default;
+$pagination-border-color:           #198754!default;
 
 $pagination-focus-color:            var(--#{$prefix}link-hover-color) !default;
 $pagination-focus-bg:               var(--#{$prefix}secondary-bg) !default;
 $pagination-focus-box-shadow:       $focus-ring-box-shadow !default;
 $pagination-focus-outline:          0 !default;
 
-$pagination-hover-color:            var(--#{$prefix}link-hover-color) !default;
-$pagination-hover-bg:               var(--#{$prefix}tertiary-bg) !default;
-$pagination-hover-border-color:     var(--#{$prefix}border-color) !default; // Todo in v6: remove this?
+$pagination-hover-color:            #fff !default;
+$pagination-hover-bg:               #198754 !default;
+$pagination-hover-border-color:     #198754 !default; // Todo in v6: remove this?
 
 $pagination-active-color:           $component-active-color !default;
 $pagination-active-bg:              $component-active-bg !default;

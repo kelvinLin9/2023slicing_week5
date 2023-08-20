@@ -1,7 +1,14 @@
+.sidebar {
+  position: fixed;
+  min-height: 100vh;
+  width: 296px;
+}
+
+
 .sidebar-hover {
   cursor: pointer;
   position: relative;
-  a :hover {
+  a:hover {
     color: #198754;
   }
   &:hover {
